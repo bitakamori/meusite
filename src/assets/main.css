@@ -1,0 +1,25 @@
+@import './base.css';
+
+/* 
+font-family: 'Karla', sans-serif;
+font-family: 'Prompt', sans-serif; 
+*/
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  place-items: center;
+
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: whitesmoke;
+  transition: 0.4s;
+}
