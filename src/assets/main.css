@@ -14,12 +14,14 @@ font-family: 'Prompt', sans-serif;
   flex-direction: column;
   justify-content: flex-start;
   place-items: center;
+  background-color: white;
 
 }
 
 a,
 .green {
   text-decoration: none;
-  color: whitesmoke;
+  color: #5c1329;
   transition: 0.4s;
+  background: white;
 }

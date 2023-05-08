@@ -7,8 +7,8 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
     <nav>
       <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/works">Works</RouterLink>
-      <RouterLink to="/tec">Technologies</RouterLink>
+      <RouterLink to="/works">Escolaridade</RouterLink>
+      <RouterLink to="/tec">Hobbies</RouterLink>
       <RouterLink to="/about">About Me</RouterLink>
     </nav>
   </header>
@@ -22,8 +22,8 @@ import { RouterLink, RouterView } from 'vue-router'
   header {
     line-height: 1.5;
 
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 40px;
+    padding-bottom: 20px;
   }
 
 
@@ -34,7 +34,7 @@ import { RouterLink, RouterView } from 'vue-router'
     margin-top: 0rem;
     font-weight: 200;
 
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
   }
 

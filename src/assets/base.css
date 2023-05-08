@@ -1,16 +1,16 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-black: #181818;
+  --vt-c-white: #ffff;
+  --vt-c-black: #ffff;
 
   --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --vt-c-text-dark-2: rgba(15, 1, 1, 0.64);
 }
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--vt-c-black);
-  --color-text: var(--vt-c-text-dark-2);
+  --color-background: #d18e8f; 
+  --color-text: #ab5c72;
 }
 
 
@@ -21,11 +21,43 @@
 body {
   min-height: 100vh;
   
-  color: var(--color-text);
-  background: var(--color-background);
+  color: #d18e8f ;
+  background: white;
 
-  font-family: 'Karla', sans-serif;
-  font-weight: 800;
+  font-family: 'Poppins';
+  font-size: 13px;
+  font-weight: 150;
 
-  font-size: 15px;
 }
+
+
+body {
+  --sb-track-color: #ffffff ;
+  --sb-thumb-color: #e4bdbd;
+  --sb-size: 10px;
+
+  scrollbar-color: var(--sb-thumb-color) 
+                   var(--sb-track-color);
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size) 
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 10px;
+  
+  }
+
+/* paleta 
+#91334f escuro
+#ab5c72
+#d18e8f
+
+*/
