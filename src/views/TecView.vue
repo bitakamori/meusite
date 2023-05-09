@@ -1,88 +1,145 @@
 <script>
+/* IMPORT LIVROS */
+import hp from "@/assets/fotos/hp.png";
+import js from "@/assets/fotos/js.png";
+import oimp from "@/assets/fotos/oimp.png";
+import ver from "@/assets/fotos/ver.png";
+
+/* IMPORT FILMES */
+import spn from "@/assets/fotos/spn.png";
+import herd from "@/assets/fotos/herd.png";
+import mv from "@/assets/fotos/mv.png";
+import hpm from "@/assets/fotos/hpm.png";
+
+/* IMPORT AMI */
+import rp from "@/assets/fotos/rp.png";
+import uni from "@/assets/fotos/uni.png";
+import vd from "@/assets/fotos/vd.png";
+import rs from "@/assets/fotos/rs.png";
+
+export default {
+  data() {
+    return {
+      indexLivros: 0,
+      indexFilmes: 0,
+      indexAmi: 0,
+
+      livros: [
+        { phat: hp, title: "Harry Potter" },
+        { phat: js, title: "jantar Secreto" },
+        { phat: oimp, title: "O impulso" },
+        { phat: ver, title: "Verity" },
+      ],
+
+      filmes: [
+        { phat: spn, title: "Supernatural" },
+        { phat: herd, title: "hereditário" },
+        { phat: mv, title: "Marvel" },
+        { phat: hpm, title: "Harry Potter" },
+      ],
+
+      ami: [
+        { phat: rp, title: "" },
+        { phat: uni, title: "" },
+        { phat: vd, title: "" },
+        { phat: rs, title: "" },
+      ],
+    };
+  },
+  methods: {
+    indexLivrosMais() {
+      this.indexLivros == 3 ? (this.indexLivros = 0) : this.indexLivros++;
+    },
+    indexLivrosMenos() {
+      this.indexLivros == 0 ? (this.indexLivros = 3) : this.indexLivros--;
+    },
+    indexFilmesMais() {
+      this.indexFilmes == 3 ? (this.indexFilmes = 0) : this.indexFilmes++;
+    },
+    indexFilmesMenos() {
+      this.indexFilmes == 0 ? (this.indexFilmes = 3) : this.indexFilmes--;
+    },
+    indexAmiMais() {
+      this.indexAmi == 3 ? (this.indexAmi = 0) : this.indexAmi++;
+    },
+    indexAmiMenos() {
+      this.indexAmi == 0 ? (this.indexAmi = 3) : this.indexAmi--;
+    },
+  },
+};
 </script>
 
 <template>
-
   <div class="complexo">
-  <main>
-    <div class="box1"> 
+    <!-- LIVROS FAVORITOS -->
+
+    <div class="box1">
+      <div class="text0">Livros favoritos</div>
+
       <div class="container-img">
-      <img  src="@/assets/fotos/hp.png" />
-    </div>
-    <div class="content">
-      <div class="center">
-        Sou apaixonada pela leitura, adoro o poder de imersão que um livro proporciona. Meus gerenros preferidos são suspense, serial killer, 
-        fantasia, ficção científica e livros de psicologia e autoajuda. 
+        <div class="arrow" @click="indexLivrosMenos">&lt</div>
+        <div class="container-livro">
+          <img :src="livros[indexLivros].phat" alt="" />
+          <br />
+          {{ livros[indexLivros].title }}
         </div>
-     </div>
-    </div>
+        <div class="arrow" @click="indexLivrosMais">></div>
 
-    <div class="box4">
-      <div class="text0" > Livros favoritos</div>
-      <div class="img-text2">
-        <img  src="@/assets/fotos/js.png" />
-        <img  src="@/assets/fotos/oimp.png" />
-        <img  src="@/assets/fotos/ver.png" />
-      </div>
-    </div>
-
-    
-
-    <div class="box2">
-      <div class="content2">
-       <div class="center2">
-        Adoro ver filmes e séries, e harry potter é meu confort film com gostinho de infancia. Meus generos preferidos são terror/suspense
-        ficção científica e fantasia, pincipalmente com bons plot twist. E adoro séries de confeitaria e competições em geral. 
+        <div class="content">
+          Sou apaixonada pela leitura, adoro o poder de imersão que um livro proporciona.
+          Meus gerenros preferidos são suspense, serial killer, fantasia, ficção
+          científica e livros de psicologia e autoajuda.
         </div>
       </div>
-      <div class="container-img2">
-      <img  src="@/assets/fotos/hpm.png" /> 
-      </div>
-    </div>  
-
-    <div class="box4">
-      <div class="text0" > Séries/Filmes favoritos</div>
-      <div class="img-text2">
-        <img  src="@/assets/fotos/spn.png" />
-        <img  src="@/assets/fotos/herd.png" />
-        <img  src="@/assets/fotos/mv.png" />
-      </div>
     </div>
 
-    <div class="box3"> 
-      <div class="container-img3">
-      <img  src="@/assets/fotos/rp.png" />
-    </div>
-    <div class="content3">
-      <div class="center3">
-        Amo fazer croche, principalmente amigurumis. É uma otima terapia. 
+    <!-- FILMES FAVORITOS -->
+
+    <div class="box1">
+      <div class="text0">Filmes favoritos</div>
+
+      <div class="container-img">
+        <div class="content content_direita">
+          Adoro ver filmes e séries, e harry potter é meu confort film com gostinho de
+          infancia. Meus generos preferidos são terror/suspense ficção científica e
+          fantasia, pincipalmente com bons plot twist. E adoro séries de confeitaria e
+          competições em geral.
         </div>
-     </div>
-    </div>
 
-    <div class="box4">
-      <div class="text0" > Alguns amigurumis</div>
-      <div class="img-text2">
-        <img  src="@/assets/fotos/uni.png" />
-        <img  src="@/assets/fotos/vd.png" />
-        <img  src="@/assets/fotos/rs.png" />
+        <div class="arrow" @click="indexFilmesMenos">&lt</div>
+        <div class="container-livro">
+          <img :src="filmes[indexFilmes].phat" alt="" />
+          <br />
+          {{ filmes[indexFilmes].title }}
+        </div>
+        <div class="arrow" @click="indexFilmesMais">></div>
       </div>
     </div>
 
-    
+    <!-- Amigurumis -->
 
+    <div class="box1">
+      <div class="text0">Alguns amigurumis</div>
 
-  </main>
-  
-</div>
+      <div class="container-img">
+        <div class="arrow" @click="indexAmiMenos">&lt</div>
+        <div class="container-livro">
+          <img :src="ami[indexAmi].phat" alt="" />
+          <br />
+          {{ ami[indexAmi].title }}
+        </div>
+        <div class="arrow" @click="indexAmiMais">></div>
 
-
-
+        <div class="content">
+          Amo fazer croche, principalmente amigurumis. É uma otima terapia.
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
-
-div.complexo{
+div.complexo {
   display: flex;
   flex-direction: column;
   height: auto;
@@ -92,200 +149,87 @@ div.complexo{
   align-items: space-around;
 }
 
-
 div.complexo main {
-  /* background: palevioletred; */
   height: auto;
   display: flex;
-  /* justify-content: space-between; */
   flex-direction: column;
- }
- 
- .box1 {
+}
+
+/* LIVROS FAVORITOS */
+
+.box1 {
   display: flex;
   justify-content: space-between;
-  /* background: orange; */
-  height: 500px;
+  height: 400px;
   margin-top: 1rem;
- }
 
- div.container-img{
+  flex-direction: column;
+
+  align-items: center;
+}
+
+div.container-img {
   height: 90%;
-  width: 50%;
-  /* background: yellow; */
-  
- }
+  width: 70%;
 
- div.container-img> img {
-  height: 320px;
-  width: auto;
-  border-radius: 30%;
-  margin: 3rem;
-  margin-left: 9rem;
-  margin-top: 4rem;
-  
- }
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
 
- .content {
+  flex-direction: row;
+}
+
+div.container-livro > img {
+  height: auto;
+  width: 200px;
+
+  border-radius: 20px;
+}
+
+.container-livro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.content {
   /* background: red; */
   height: 90%;
   width: 50%;
-  
-}
 
- .center{
   display: flex;
+
   justify-content: center;
   align-items: center;
-  text-align: justify;
-  /* background: grey; */
-  margin-left: 2rem;
-  margin-right: 8rem;
-  margin-top: 13rem;
- }
-
-.box2{
-  display: flex;
-  justify-content: space-between;
-  /* background: black; */
-  height: 500px;
-}  
-
- div.container-img2{
-  height: 90%;
-  width: 50%;
-  /* background: rgb(58, 58, 2); */
- }
-
- div.container-img2> img {
-  height: 320px;
-  width: auto;
-  border-radius: 20%;
-  margin: 3rem;
-  margin-left: 4rem;
- }
-
- .content2 {
-  /* background: rgb(94, 6, 6); */
-  height: 50%;
-  width: 50%;
-  
+  text-align: left;
 }
 
- .center2{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  text-align: justify;
-  /* background: rgb(51, 36, 36); */
-  margin-left: 8rem;
-  margin-right: 2rem;
-  margin-top: 8rem;
- }
-
- /* .img-text {
-  height: 250px;
-  width: auto;
-  background: black;
-  margin-left: 8rem;
-  margin-right: 2rem;
-  margin-top: 2rem;
-
- } */
-
- div.img-text > img{
-  height: 150px;
-  width: auto;
-  display: flex;
-  border-radius: 50%;
-  margin-top: 1rem;
- }
-
-
-.box3{
-  display: flex;
-  justify-content: space-between;
-  /* background: rgb(192, 65, 65); */
-  height: 500px;
-}
-
-div.container-img3{
-  height: 90%;
-  width: 50%;
-  /* background: rgb(58, 58, 2); */
- }
-
- div.container-img3> img {
-  height: 350px;
-  width: auto;
-  border-radius: 50px;
-  margin: 3rem;
-  margin-left: 11rem;
-  margin-top: 4rem;
- }
-
- .content3 {
-  /* background: rgb(94, 6, 6); */
-  height: 90%;
-  width: 50%;
-  
-}
-
- .center3{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: justify;
-  /* background: rgb(51, 36, 36); */
-  margin-left: 2rem;
-  margin-right: 8rem;
-  margin-top: 13rem;
- }
-
- .box4{
-  display: flex;
-  flex-direction: column;
-  /* background: rgb(192, 65, 65); */
-  height: 500px;
-
+.content_direita {
+  text-align: right;
 }
 
 .text0 {
   text-align: center;
   margin: 0 0 2rem 0;
-  font-size:x-large;
+  font-size: x-large;
 }
 
-.img-text2 {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 0 8rem 1rem 8rem;
+.arrow {
+  font-size: 25px;
+  transition: 1s ease-out;
 
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-div.img-text2 > img{
-  height: 200px;
-  width: 200px;
-  object-fit: cover;
-  border-radius: 100px;
-  display: flex;
-  
- }
 
- .text2 {
-  text-align: center;
-  margin: 1rem 0 5rem 0;
- }
-
-
-
- 
-
-
-
- /* div.complexo > footer{
-  background: purple;
-  flex-grow: 1;
- } */
-
+.arrow:hover {
+  background-color: rgb(255, 181, 181);
+}
 </style>
