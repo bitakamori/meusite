@@ -56,11 +56,13 @@ export default {
       <img src="./gif/opened.png" alt="">
     </div>
 
-    <div @click="hideAnimation" class="banner mapOpen none" id="banner">
-      <img src="./gif/banner.png" alt="">
+    <div @click="hideAnimation" class="mapOpen none" id="banner">
+      <img class="banner" src="./gif/banner.png" alt="">
+      <img class="bannerName" src="./gif/bannerName.png" alt="">
     </div>
+
     <!--     <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_xp4orwk6.json" speed="0.5" autoplay loop>
-                </lottie-player> -->
+                    </lottie-player> -->
     <button id="jura" @click="log()">
       <div class="text">Eu juro solenemente não fazer nada de bom.</div>
     </button>
@@ -107,13 +109,15 @@ export default {
 
 .startAnimation button:hover {
   color: #6B5D51;
-  }
+}
 
 
 .banner {
-  height: 100px;
+  height: 50px;
   position: absolute;
-  top: 80%;
+
+  top: 90%;
+  left: 45%;
 
   transition: 1s ease-in-out;
 }
@@ -122,11 +126,34 @@ export default {
   opacity: 0.7;
 }
 
+.bannerName {
+  position: absolute;
+  top: 220px;
+  left: 30%;
+
+  width: auto;
+  height: 50px;
+
+  animation: moveBannerNave 30s ease-in-out;
+}
+
+@keyframes moveBannerNave {
+  from {
+    top: 250px;
+    left: 50%;
+  }
+
+  to {
+    top: 220px;
+    left: 30%;
+  }
+}
+
 .none {
   display: none;
 }
 
-.text{
+.text {
   font-size: 40px;
   font-weight: 600;
 }
